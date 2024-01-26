@@ -1,15 +1,23 @@
+# Remove tags from villagers that have lost job site block:
 tag @e[tag=book0,nbt={VillagerData:{profession:"minecraft:none"}}] remove book0
 tag @e[tag=book0done,nbt={VillagerData:{profession:"minecraft:none"}}] remove book0done
 
-tag @e[type=villager,tag=!book0,tag=!book0done,nbt={VillagerData:{profession:"minecraft:librarian"}},nbt={VillagerData:{level:1}}] add book0
-tag @e[type=villager,tag=!book1,tag=!book1done,nbt={VillagerData:{profession:"minecraft:librarian"}},nbt={VillagerData:{level:2}}] add book1
-tag @e[type=villager,tag=!book2,tag=!book2done,nbt={VillagerData:{profession:"minecraft:librarian"}},nbt={VillagerData:{level:3}}] add book2
-tag @e[type=villager,tag=!book3,tag=!book3done,nbt={VillagerData:{profession:"minecraft:librarian"}},nbt={VillagerData:{level:4}}] add book3
+# Tag trades that have already been modifyied.
+tag @e[type=villager,tag=!book0,tag=!book0done,nbt={VillagerData:{profession:"minecraft:librarian"}},nbt={Offers:{Recipes:[{sell:{id:"minecraft:enchanted_book",tag:{display:{Lore:['"Novice Level Trade"']}}}}]}}] add book0done
+tag @e[type=villager,tag=!book1,tag=!book1done,nbt={VillagerData:{profession:"minecraft:librarian"}},nbt={Offers:{Recipes:[{sell:{id:"minecraft:enchanted_book",tag:{display:{Lore:['"Apprentice Level Trade"']}}}}]}}] add book1done
+tag @e[type=villager,tag=!book2,tag=!book2done,nbt={VillagerData:{profession:"minecraft:librarian"}},nbt={Offers:{Recipes:[{sell:{id:"minecraft:enchanted_book",tag:{display:{Lore:['"Journeyman Level Trade"']}}}}]}}] add book2done
+tag @e[type=villager,tag=!book3,tag=!book3done,nbt={VillagerData:{profession:"minecraft:librarian"}},nbt={Offers:{Recipes:[{sell:{id:"minecraft:enchanted_book",tag:{display:{Lore:['"Expert Level Trade"']}}}}]}}] add book3done
 
-# Add additional trade for Master Level Librarians:
-execute as @e[type=villager,tag=!book4,tag=!book4done,nbt={VillagerData:{profession:"minecraft:librarian",level:5}}] run data modify entity @s Offers.Recipes append value {buy:{id:"minecraft:emerald",Count:16},buyB:{id:"minecraft:diamond_pickaxe",Count:2,tag:{Enchantments:[{}],display:{Name:"\"Drop an Enchanted Item\""}}},sell:{id:"minecraft:enchanted_book",tag:{StoredEnchantments:[]},Count:1},maxUses:12}
+tag @e[type=villager,tag=!book4,tag=!book4done,nbt={VillagerData:{profession:"minecraft:librarian"}},nbt={Offers:{Recipes:[{sell:{id:"minecraft:enchanted_book",tag:{display:{Lore:['"Master Level Trade"']}}}}]}}] add book4done
 
-tag @e[type=villager,tag=!book4,tag=!book4done,nbt={VillagerData:{profession:"minecraft:librarian"}},nbt={VillagerData:{level:5}}] add book4
+# Tag trades that are pending modification. (Excluding already modified trades tagged with book#done)
+tag @e[type=villager,tag=!book0,tag=!book0done,nbt={VillagerData:{profession:"minecraft:librarian"}},nbt={Offers:{Recipes:[{buyB:{id:"minecraft:enchanted_book",tag:{display:{Lore:['"Novice Level Trade"']}}}}]}}] add book0
+tag @e[type=villager,tag=!book1,tag=!book1done,nbt={VillagerData:{profession:"minecraft:librarian"}},nbt={Offers:{Recipes:[{buyB:{id:"minecraft:enchanted_book",tag:{display:{Lore:['"Apprentice Level Trade"']}}}}]}}] add book1
+tag @e[type=villager,tag=!book2,tag=!book2done,nbt={VillagerData:{profession:"minecraft:librarian"}},nbt={Offers:{Recipes:[{buyB:{id:"minecraft:enchanted_book",tag:{display:{Lore:['"Journeyman Level Trade"']}}}}]}}] add book2
+tag @e[type=villager,tag=!book3,tag=!book3done,nbt={VillagerData:{profession:"minecraft:librarian"}},nbt={Offers:{Recipes:[{buyB:{id:"minecraft:enchanted_book",tag:{display:{Lore:['"Expert Level Trade"']}}}}]}}] add book3
 
+tag @e[type=villager,tag=!book4,tag=!book4done,nbt={VillagerData:{profession:"minecraft:librarian"}},nbt={Offers:{Recipes:[{buyB:{id:"minecraft:diamond_pickaxe",tag:{display:{Lore:['"Master Level Trade"']}}}}]}}] add book4
+
+# Tag books and items that could be used to modify trades.
 tag @e[tag=!bookenchantmentlearnable,type=item,nbt={Item:{id:"minecraft:enchanted_book"}}] add bookenchantmentlearnable
 tag @e[tag=!enchantmentlearnable,type=item,nbt={Item:{tag:{Enchantments:[{}]}}}] add enchantmentlearnable

@@ -1,7 +1,7 @@
 {
         "values": [
         "eruditevillagers:tick",
-        "eruditevillagers:tradetagger",
+        "eruditevillagers:tradeinitializer",
         "eruditevillagers:tradelearn"
      ]
 }
