@@ -1,6 +1,32 @@
-tag @e[nbt={VillagerData:{profession:"minecraft:librarian",level:1}}] add book0done
-tag @e[nbt={VillagerData:{profession:"minecraft:librarian",level:2}}] add book1done
-tag @e[nbt={VillagerData:{profession:"minecraft:librarian",level:3}}] add book2done
-tag @e[nbt={VillagerData:{profession:"minecraft:librarian",level:4}}] add book3done
+# Update v1.0 villagers to have the right lore for pending learnable trades
+
+execute as @e[type=villager,nbt={VillagerData:{profession:"minecraft:librarian"}}] if data entity @s Offers.Recipes[0].buyB{id:"minecraft:enchanted_book",Count:2b,tag:{display:{Name:'"Drop an Enchanted Book"'}}} run data modify entity @s Offers.Recipes[0].buyB.tag.display merge value {Lore:['"Novice Level Trade"']}
+execute as @e[type=villager,nbt={VillagerData:{profession:"minecraft:librarian"}}] if data entity @s Offers.Recipes[1].buyB{id:"minecraft:enchanted_book",Count:2b,tag:{display:{Name:'"Drop an Enchanted Book"'}}} run data modify entity @s Offers.Recipes[1].buyB.tag.display merge value {Lore:['"Novice Level Trade"']}
+execute as @e[type=villager,nbt={VillagerData:{profession:"minecraft:librarian"}}] if data entity @s Offers.Recipes[2].buyB{id:"minecraft:enchanted_book",Count:2b,tag:{display:{Name:'"Drop an Enchanted Book"'}}} run data modify entity @s Offers.Recipes[2].buyB.tag.display merge value {Lore:['"Apprentice Level Trade"']}
+execute as @e[type=villager,nbt={VillagerData:{profession:"minecraft:librarian"}}] if data entity @s Offers.Recipes[3].buyB{id:"minecraft:enchanted_book",Count:2b,tag:{display:{Name:'"Drop an Enchanted Book"'}}} run data modify entity @s Offers.Recipes[3].buyB.tag.display merge value {Lore:['"Apprentice Level Trade"']}
+execute as @e[type=villager,nbt={VillagerData:{profession:"minecraft:librarian"}}] if data entity @s Offers.Recipes[4].buyB{id:"minecraft:enchanted_book",Count:2b,tag:{display:{Name:'"Drop an Enchanted Book"'}}} run data modify entity @s Offers.Recipes[4].buyB.tag.display merge value {Lore:['"Journeyman Level Trade"']}
+execute as @e[type=villager,nbt={VillagerData:{profession:"minecraft:librarian"}}] if data entity @s Offers.Recipes[5].buyB{id:"minecraft:enchanted_book",Count:2b,tag:{display:{Name:'"Drop an Enchanted Book"'}}} run data modify entity @s Offers.Recipes[5].buyB.tag.display merge value {Lore:['"Journeyman Level Trade"']}
+execute as @e[type=villager,nbt={VillagerData:{profession:"minecraft:librarian"}}] if data entity @s Offers.Recipes[6].buyB{id:"minecraft:enchanted_book",Count:2b,tag:{display:{Name:'"Drop an Enchanted Book"'}}} run data modify entity @s Offers.Recipes[6].buyB.tag.display merge value {Lore:['"Expert Level Trade"']}
+execute as @e[type=villager,nbt={VillagerData:{profession:"minecraft:librarian"}}] if data entity @s Offers.Recipes[7].buyB{id:"minecraft:enchanted_book",Count:2b,tag:{display:{Name:'"Drop an Enchanted Book"'}}} run data modify entity @s Offers.Recipes[7].buyB.tag.display merge value {Lore:['"Expert Level Trade"']}
+
+execute as @e[type=villager,nbt={VillagerData:{profession:"minecraft:librarian"}}] if data entity @s Offers.Recipes[0].buyB{id:"minecraft:enchanted_book",Count:2b,tag:{display:{Name:'"Drop an Enchanted Book"'}}} run tag @s add book0
+execute as @e[type=villager,nbt={VillagerData:{profession:"minecraft:librarian"}}] if data entity @s Offers.Recipes[1].buyB{id:"minecraft:enchanted_book",Count:2b,tag:{display:{Name:'"Drop an Enchanted Book"'}}} run tag @s add book0
+execute as @e[type=villager,nbt={VillagerData:{profession:"minecraft:librarian"}}] if data entity @s Offers.Recipes[2].buyB{id:"minecraft:enchanted_book",Count:2b,tag:{display:{Name:'"Drop an Enchanted Book"'}}} run tag @s add book1
+execute as @e[type=villager,nbt={VillagerData:{profession:"minecraft:librarian"}}] if data entity @s Offers.Recipes[3].buyB{id:"minecraft:enchanted_book",Count:2b,tag:{display:{Name:'"Drop an Enchanted Book"'}}} run tag @s add book1
+execute as @e[type=villager,nbt={VillagerData:{profession:"minecraft:librarian"}}] if data entity @s Offers.Recipes[4].buyB{id:"minecraft:enchanted_book",Count:2b,tag:{display:{Name:'"Drop an Enchanted Book"'}}} run tag @s add book2
+execute as @e[type=villager,nbt={VillagerData:{profession:"minecraft:librarian"}}] if data entity @s Offers.Recipes[5].buyB{id:"minecraft:enchanted_book",Count:2b,tag:{display:{Name:'"Drop an Enchanted Book"'}}} run tag @s add book2
+execute as @e[type=villager,nbt={VillagerData:{profession:"minecraft:librarian"}}] if data entity @s Offers.Recipes[6].buyB{id:"minecraft:enchanted_book",Count:2b,tag:{display:{Name:'"Drop an Enchanted Book"'}}} run tag @s add book3
+execute as @e[type=villager,nbt={VillagerData:{profession:"minecraft:librarian"}}] if data entity @s Offers.Recipes[7].buyB{id:"minecraft:enchanted_book",Count:2b,tag:{display:{Name:'"Drop an Enchanted Book"'}}} run tag @s add book3
+
+# Update v1.0 villagers to have the right lore for pending learnt trades
+
+execute as @e[tag=!book0,type=villager,nbt={VillagerData:{profession:"minecraft:librarian"}}] if data entity @s Offers.Recipes[0].sell{id:"minecraft:enchanted_book"} run data modify entity @s Offers.Recipes[0].sell.tag.display merge value {Lore:['"Novice Level Trade"']}
+execute as @e[tag=!book0,type=villager,nbt={VillagerData:{profession:"minecraft:librarian"}}] if data entity @s Offers.Recipes[1].sell{id:"minecraft:enchanted_book"} run data modify entity @s Offers.Recipes[1].sell.tag.display merge value {Lore:['"Novice Level Trade"']}
+execute as @e[tag=!book1,type=villager,nbt={VillagerData:{profession:"minecraft:librarian"}}] if data entity @s Offers.Recipes[2].sell{id:"minecraft:enchanted_book"} run data modify entity @s Offers.Recipes[2].sell.tag.display merge value {Lore:['"Apprentice Level Trade"']}
+execute as @e[tag=!book1,type=villager,nbt={VillagerData:{profession:"minecraft:librarian"}}] if data entity @s Offers.Recipes[3].sell{id:"minecraft:enchanted_book"} run data modify entity @s Offers.Recipes[3].sell.tag.display merge value {Lore:['"Apprentice Level Trade"']}
+execute as @e[tag=!book2,type=villager,nbt={VillagerData:{profession:"minecraft:librarian"}}] if data entity @s Offers.Recipes[4].sell{id:"minecraft:enchanted_book"} run data modify entity @s Offers.Recipes[4].sell.tag.display merge value {Lore:['"Journeyman Level Trade"']}
+execute as @e[tag=!book2,type=villager,nbt={VillagerData:{profession:"minecraft:librarian"}}] if data entity @s Offers.Recipes[5].sell{id:"minecraft:enchanted_book"} run data modify entity @s Offers.Recipes[5].sell.tag.display merge value {Lore:['"Journeyman Level Trade"']}
+execute as @e[tag=!book3,type=villager,nbt={VillagerData:{profession:"minecraft:librarian"}}] if data entity @s Offers.Recipes[6].sell{id:"minecraft:enchanted_book"} run data modify entity @s Offers.Recipes[6].sell.tag.display merge value {Lore:['"Expert Level Trade"']}
+execute as @e[tag=!book3,type=villager,nbt={VillagerData:{profession:"minecraft:librarian"}}] if data entity @s Offers.Recipes[7].sell{id:"minecraft:enchanted_book"} run data modify entity @s Offers.Recipes[7].sell.tag.display merge value {Lore:['"Expert Level Trade"']}
 
 tellraw @a {"text": "Erudite Villagers (Version 1.1) has finished loading", "color": "#77BBFF"} 

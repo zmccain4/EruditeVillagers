@@ -2,7 +2,7 @@
 tag @e[tag=book0,nbt={VillagerData:{profession:"minecraft:none"}}] remove book0
 tag @e[tag=book0done,nbt={VillagerData:{profession:"minecraft:none"}}] remove book0done
 
-# Tag trades that have already been modifyied.
+# Tag trades that have already been modified.
 tag @e[type=villager,tag=!book0,tag=!book0done,nbt={VillagerData:{profession:"minecraft:librarian"}},nbt={Offers:{Recipes:[{sell:{id:"minecraft:enchanted_book",tag:{display:{Lore:['"Novice Level Trade"']}}}}]}}] add book0done
 tag @e[type=villager,tag=!book1,tag=!book1done,nbt={VillagerData:{profession:"minecraft:librarian"}},nbt={Offers:{Recipes:[{sell:{id:"minecraft:enchanted_book",tag:{display:{Lore:['"Apprentice Level Trade"']}}}}]}}] add book1done
 tag @e[type=villager,tag=!book2,tag=!book2done,nbt={VillagerData:{profession:"minecraft:librarian"}},nbt={Offers:{Recipes:[{sell:{id:"minecraft:enchanted_book",tag:{display:{Lore:['"Journeyman Level Trade"']}}}}]}}] add book2done

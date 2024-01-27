@@ -12,7 +12,8 @@ execute as @e[tag=booklearnpending] at @s if data entity @e[tag=book0,limit=1,so
 execute as @e[tag=booklearnpending] at @s if data entity @e[tag=book0,limit=1,sort=nearest] Offers.Recipes[].buyB{id:"minecraft:enchanted_book"} run data modify entity @e[tag=book0,limit=1,sort=nearest] Offers.Recipes[1].sell{id:"minecraft:enchanted_book"}.tag.display.Lore set value ['"Novice Level Trade"']
 
 # Make trade tradeable again by resetting the buyB to just a book, with Count:1
-execute as @e[tag=booklearnpending] at @s if data entity @e[tag=book0,limit=1,sort=nearest] Offers.Recipes[].buyB{id:"minecraft:enchanted_book"} run data modify entity @e[tag=book0,limit=1,sort=nearest] Offers.Recipes[].buyB{id:"minecraft:enchanted_book"} set value {id:"minecraft:book",Count:1}
+execute as @e[tag=booklearnpending] at @s if data entity @e[tag=book0,limit=1,sort=nearest] Offers.Recipes[0].buyB{id:"minecraft:enchanted_book"} run data modify entity @e[tag=book0,limit=1,sort=nearest] Offers.Recipes[0].buyB{id:"minecraft:enchanted_book"} set value {id:"minecraft:book",Count:1}
+execute as @e[tag=booklearnpending] at @s if data entity @e[tag=book0,limit=1,sort=nearest] Offers.Recipes[1].buyB{id:"minecraft:enchanted_book"} run data modify entity @e[tag=book0,limit=1,sort=nearest] Offers.Recipes[1].buyB{id:"minecraft:enchanted_book"} set value {id:"minecraft:book",Count:1}
 
 # Prevent Villager from learning book0 again
 execute as @e[tag=booklearnpending] at @s run tag @e[tag=book0,limit=1,sort=nearest] add book0done
@@ -29,10 +30,11 @@ execute as @e[tag=bookenchantmentlearnable] at @s if entity @e[tag=book1,tag=!bo
 execute as @e[tag=booklearnpending] at @s if data entity @e[tag=book1,limit=1,sort=nearest] Offers.Recipes[].buyB{id:"minecraft:enchanted_book"} run data modify entity @e[tag=book1,limit=1,sort=nearest] Offers.Recipes[2].sell{id:"minecraft:enchanted_book"}.tag.StoredEnchantments insert 0 from entity @s Item.tag.StoredEnchantments[0]
 execute as @e[tag=booklearnpending] at @s if data entity @e[tag=book1,limit=1,sort=nearest] Offers.Recipes[].buyB{id:"minecraft:enchanted_book"} run data modify entity @e[tag=book1,limit=1,sort=nearest] Offers.Recipes[3].sell{id:"minecraft:enchanted_book"}.tag.StoredEnchantments insert 0 from entity @s Item.tag.StoredEnchantments[0]
 
-execute as @e[tag=booklearnpending] at @s if data entity @e[tag=book0,limit=1,sort=nearest] Offers.Recipes[].buyB{id:"minecraft:enchanted_book"} run data modify entity @e[tag=book1,limit=1,sort=nearest] Offers.Recipes[2].sell{id:"minecraft:enchanted_book"}.tag.display.Lore set value ['"Apprentice Level Trade"']
-execute as @e[tag=booklearnpending] at @s if data entity @e[tag=book0,limit=1,sort=nearest] Offers.Recipes[].buyB{id:"minecraft:enchanted_book"} run data modify entity @e[tag=book1,limit=1,sort=nearest] Offers.Recipes[3].sell{id:"minecraft:enchanted_book"}.tag.display.Lore set value ['"Apprentice Level Trade"']
+execute as @e[tag=booklearnpending] at @s if data entity @e[tag=book1,limit=1,sort=nearest] Offers.Recipes[].buyB{id:"minecraft:enchanted_book"} run data modify entity @e[tag=book1,limit=1,sort=nearest] Offers.Recipes[2].sell{id:"minecraft:enchanted_book"}.tag.display.Lore set value ['"Apprentice Level Trade"']
+execute as @e[tag=booklearnpending] at @s if data entity @e[tag=book1,limit=1,sort=nearest] Offers.Recipes[].buyB{id:"minecraft:enchanted_book"} run data modify entity @e[tag=book1,limit=1,sort=nearest] Offers.Recipes[3].sell{id:"minecraft:enchanted_book"}.tag.display.Lore set value ['"Apprentice Level Trade"']
 
-execute as @e[tag=booklearnpending] at @s if data entity @e[tag=book1,limit=1,sort=nearest] Offers.Recipes[].buyB{id:"minecraft:enchanted_book"} run data modify entity @e[tag=book1,limit=1,sort=nearest] Offers.Recipes[].buyB{id:"minecraft:enchanted_book"} set value {id:"minecraft:book",Count:1}
+execute as @e[tag=booklearnpending] at @s if data entity @e[tag=book1,limit=1,sort=nearest] Offers.Recipes[2].buyB{id:"minecraft:enchanted_book"} run data modify entity @e[tag=book1,limit=1,sort=nearest] Offers.Recipes[2].buyB{id:"minecraft:enchanted_book"} set value {id:"minecraft:book",Count:1}
+execute as @e[tag=booklearnpending] at @s if data entity @e[tag=book1,limit=1,sort=nearest] Offers.Recipes[3].buyB{id:"minecraft:enchanted_book"} run data modify entity @e[tag=book1,limit=1,sort=nearest] Offers.Recipes[3].buyB{id:"minecraft:enchanted_book"} set value {id:"minecraft:book",Count:1}
 
 execute as @e[tag=booklearnpending] at @s run tag @e[tag=book1,limit=1,sort=nearest] add book1done
 execute as @e[tag=booklearnpending] at @s run tag @e[tag=book1,limit=1,sort=nearest] remove book1
@@ -46,10 +48,11 @@ execute as @e[tag=bookenchantmentlearnable] at @s if entity @e[tag=book2,tag=!bo
 execute as @e[tag=booklearnpending] at @s if data entity @e[tag=book2,limit=1,sort=nearest] Offers.Recipes[].buyB{id:"minecraft:enchanted_book"} run data modify entity @e[tag=book2,limit=1,sort=nearest] Offers.Recipes[4].sell{id:"minecraft:enchanted_book"}.tag.StoredEnchantments insert 0 from entity @s Item.tag.StoredEnchantments[0]
 execute as @e[tag=booklearnpending] at @s if data entity @e[tag=book2,limit=1,sort=nearest] Offers.Recipes[].buyB{id:"minecraft:enchanted_book"} run data modify entity @e[tag=book2,limit=1,sort=nearest] Offers.Recipes[5].sell{id:"minecraft:enchanted_book"}.tag.StoredEnchantments insert 0 from entity @s Item.tag.StoredEnchantments[0]
 
-execute as @e[tag=booklearnpending] at @s if data entity @e[tag=book0,limit=1,sort=nearest] Offers.Recipes[].buyB{id:"minecraft:enchanted_book"} run data modify entity @e[tag=book2,limit=1,sort=nearest] Offers.Recipes[4].sell{id:"minecraft:enchanted_book"}.tag.display.Lore set value ['"Journeyman Level Trade"']
-execute as @e[tag=booklearnpending] at @s if data entity @e[tag=book0,limit=1,sort=nearest] Offers.Recipes[].buyB{id:"minecraft:enchanted_book"} run data modify entity @e[tag=book2,limit=1,sort=nearest] Offers.Recipes[5].sell{id:"minecraft:enchanted_book"}.tag.display.Lore set value ['"Journeyman Level Trade"']
+execute as @e[tag=booklearnpending] at @s if data entity @e[tag=book2,limit=1,sort=nearest] Offers.Recipes[].buyB{id:"minecraft:enchanted_book"} run data modify entity @e[tag=book2,limit=1,sort=nearest] Offers.Recipes[4].sell{id:"minecraft:enchanted_book"}.tag.display.Lore set value ['"Journeyman Level Trade"']
+execute as @e[tag=booklearnpending] at @s if data entity @e[tag=book2,limit=1,sort=nearest] Offers.Recipes[].buyB{id:"minecraft:enchanted_book"} run data modify entity @e[tag=book2,limit=1,sort=nearest] Offers.Recipes[5].sell{id:"minecraft:enchanted_book"}.tag.display.Lore set value ['"Journeyman Level Trade"']
 
-execute as @e[tag=booklearnpending] at @s if data entity @e[tag=book2,limit=1,sort=nearest] Offers.Recipes[].buyB{id:"minecraft:enchanted_book"} run data modify entity @e[tag=book2,limit=1,sort=nearest] Offers.Recipes[].buyB{id:"minecraft:enchanted_book"} set value {id:"minecraft:book",Count:1}
+execute as @e[tag=booklearnpending] at @s if data entity @e[tag=book2,limit=1,sort=nearest] Offers.Recipes[4].buyB{id:"minecraft:enchanted_book"} run data modify entity @e[tag=book2,limit=1,sort=nearest] Offers.Recipes[4].buyB{id:"minecraft:enchanted_book"} set value {id:"minecraft:book",Count:1}
+execute as @e[tag=booklearnpending] at @s if data entity @e[tag=book2,limit=1,sort=nearest] Offers.Recipes[5].buyB{id:"minecraft:enchanted_book"} run data modify entity @e[tag=book2,limit=1,sort=nearest] Offers.Recipes[5].buyB{id:"minecraft:enchanted_book"} set value {id:"minecraft:book",Count:1}
 
 execute as @e[tag=booklearnpending] at @s run tag @e[tag=book2,limit=1,sort=nearest] add book2done
 execute as @e[tag=booklearnpending] at @s run tag @e[tag=book2,limit=1,sort=nearest] remove book2
@@ -63,10 +66,11 @@ execute as @e[tag=bookenchantmentlearnable] at @s if entity @e[tag=book3,tag=!bo
 execute as @e[tag=booklearnpending] at @s if data entity @e[tag=book3,limit=1,sort=nearest] Offers.Recipes[].buyB{id:"minecraft:enchanted_book"} run data modify entity @e[tag=book3,limit=1,sort=nearest] Offers.Recipes[6].sell{id:"minecraft:enchanted_book"}.tag.StoredEnchantments insert 0 from entity @s Item.tag.StoredEnchantments[0]
 execute as @e[tag=booklearnpending] at @s if data entity @e[tag=book3,limit=1,sort=nearest] Offers.Recipes[].buyB{id:"minecraft:enchanted_book"} run data modify entity @e[tag=book3,limit=1,sort=nearest] Offers.Recipes[7].sell{id:"minecraft:enchanted_book"}.tag.StoredEnchantments insert 0 from entity @s Item.tag.StoredEnchantments[0]
 
-execute as @e[tag=booklearnpending] at @s if data entity @e[tag=book0,limit=1,sort=nearest] Offers.Recipes[].buyB{id:"minecraft:enchanted_book"} run data modify entity @e[tag=book3,limit=1,sort=nearest] Offers.Recipes[6].sell{id:"minecraft:enchanted_book"}.tag.display.Lore set value ['"Expert Level Trade"']
-execute as @e[tag=booklearnpending] at @s if data entity @e[tag=book0,limit=1,sort=nearest] Offers.Recipes[].buyB{id:"minecraft:enchanted_book"} run data modify entity @e[tag=book3,limit=1,sort=nearest] Offers.Recipes[7].sell{id:"minecraft:enchanted_book"}.tag.display.Lore set value ['"Expert Level Trade"']
+execute as @e[tag=booklearnpending] at @s if data entity @e[tag=book3,limit=1,sort=nearest] Offers.Recipes[].buyB{id:"minecraft:enchanted_book"} run data modify entity @e[tag=book3,limit=1,sort=nearest] Offers.Recipes[6].sell{id:"minecraft:enchanted_book"}.tag.display.Lore set value ['"Expert Level Trade"']
+execute as @e[tag=booklearnpending] at @s if data entity @e[tag=book3,limit=1,sort=nearest] Offers.Recipes[].buyB{id:"minecraft:enchanted_book"} run data modify entity @e[tag=book3,limit=1,sort=nearest] Offers.Recipes[7].sell{id:"minecraft:enchanted_book"}.tag.display.Lore set value ['"Expert Level Trade"']
 
-execute as @e[tag=booklearnpending] at @s if data entity @e[tag=book3,limit=1,sort=nearest] Offers.Recipes[].buyB{id:"minecraft:enchanted_book"} run data modify entity @e[tag=book3,limit=1,sort=nearest] Offers.Recipes[].buyB{id:"minecraft:enchanted_book"} set value {id:"minecraft:book",Count:1}
+execute as @e[tag=booklearnpending] at @s if data entity @e[tag=book3,limit=1,sort=nearest] Offers.Recipes[6].buyB{id:"minecraft:enchanted_book"} run data modify entity @e[tag=book3,limit=1,sort=nearest] Offers.Recipes[6].buyB{id:"minecraft:enchanted_book"} set value {id:"minecraft:book",Count:1}
+execute as @e[tag=booklearnpending] at @s if data entity @e[tag=book3,limit=1,sort=nearest] Offers.Recipes[7].buyB{id:"minecraft:enchanted_book"} run data modify entity @e[tag=book3,limit=1,sort=nearest] Offers.Recipes[7].buyB{id:"minecraft:enchanted_book"} set value {id:"minecraft:book",Count:1}
 
 execute as @e[tag=booklearnpending] at @s run tag @e[tag=book3,limit=1,sort=nearest] add book3done
 execute as @e[tag=booklearnpending] at @s run tag @e[tag=book3,limit=1,sort=nearest] remove book3
@@ -87,7 +91,7 @@ execute as @e[tag=learnpending] at @s if data entity @e[tag=book4,limit=1,sort=n
 execute as @e[tag=learnpending] at @s if data entity @e[tag=book4,limit=1,sort=nearest] Offers.Recipes[].buyB{id:"minecraft:diamond_pickaxe"} run data modify entity @e[tag=book4,limit=1,sort=nearest] Offers.Recipes[9].sell{id:"minecraft:enchanted_book"}.tag.display.Lore set value ['"Master Level Trade"']
 
 # Make trade tradeable again by resetting the buyB to just a book, with Count:1
-execute as @e[tag=learnpending] at @s if data entity @e[tag=book4,limit=1,sort=nearest] Offers.Recipes[].buyB{id:"minecraft:diamond_pickaxe"} run data modify entity @e[tag=book4,limit=1,sort=nearest] Offers.Recipes[].buyB{id:"minecraft:diamond_pickaxe"} set value {id:"minecraft:book",Count:1}
+execute as @e[tag=learnpending] at @s if data entity @e[tag=book4,limit=1,sort=nearest] Offers.Recipes[].buyB{id:"minecraft:diamond_pickaxe"} run data modify entity @e[tag=book4,limit=1,sort=nearest] Offers.Recipes[9].buyB{id:"minecraft:diamond_pickaxe"} set value {id:"minecraft:book",Count:1}
 
 # Prevent Villager from learning book4 again
 execute as @e[tag=learnpending] at @s run tag @e[tag=book4,limit=1,sort=nearest] add book4done
