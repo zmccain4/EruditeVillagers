@@ -21,3 +21,10 @@ After enabling the datapack, I recommend using the /reload command at each place
 
 
 No considerations have been made to make this datapack compatible with other modifications to the game. If anything changes the number of trades a librarian has, this datapack will break.
+
+
+Version Notes:
+Version 1.1 was originally made for version 1.19.3, but should in theory work for every version from 1.14 to 1.20.4
+Version 2.1 was made for version 1.20.5, but is broken as of 1.21.5
+Version 3.0 was made for version 1.21.5, and should work until 1.21.11
+Version 4.0 is made for version 26.1, and we'll see how long it lasts before something breaks it :)
