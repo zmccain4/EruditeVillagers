@@ -28,3 +28,4 @@ Version 1.1 was originally made for version 1.19.3, but should in theory work fo
 Version 2.1 was made for version 1.20.5, but is broken as of 1.21.5
 Version 3.0 was made for version 1.21.5, and should work until 1.21.11
 Version 4.0 is made for version 26.1, and we'll see how long it lasts before something breaks it :)
+Version 4.1 fixes a bug introduced in 26.1 by the having a different number of trades for a master level librarian has after the nametag trade was traded out for 2 candle trades.
